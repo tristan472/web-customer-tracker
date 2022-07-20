@@ -13,22 +13,23 @@ import com.luv2code.springdemo.entity.Customer;
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
-	
-	// need to inject the customer DAO
+
+	// need to inject the customer dao
 	@Autowired
 	private CustomerDAO customerDAO;
-
+	
 	@RequestMapping("/list")
-	public String ListCustomers(Model theModel) {
+	public String listCustomers(Model theModel) {
 		
-		// get the customers from the DAO
+		// get customers from the dao
 		List<Customer> theCustomers = customerDAO.getCustomers();
-		
+				
 		// add the customers to the model
-		theModel.addAttribute("customers" ,theCustomers);
+		theModel.addAttribute("customers", theCustomers);
 		
 		return "list-customers";
-		
 	}
 	
 }
+
+

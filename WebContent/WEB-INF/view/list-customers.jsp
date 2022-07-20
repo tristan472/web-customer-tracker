@@ -1,8 +1,12 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="C" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!Doctype html>
 <html>
 	<head>
 		<title>List Customers</title>
+		
+		<link type="text/css"
+		  rel="stylesheet"
+		  href="${pageContext.request.contextPath}/resources/css/style.css" />
 	</head>
 	<body>
 		<div id="wrapper">
@@ -24,13 +28,13 @@
 				
 				
 					<!-- loop over and print our customers -->
-					<C:forEach var="tempCustomer" items="${customers}">
+					<c:forEach var="tempCustomer" items="${customers}">
 						<tr>
 							<td>${tempCustomer.firstName}</td>
 							<td>${tempCustomer.lastName}</td>
 							<td>${tempCustomer.email}</td>
 						</tr>
-					</C:forEach>
+					</c:forEach>
 				</table>
 			</div>
 		</div>
